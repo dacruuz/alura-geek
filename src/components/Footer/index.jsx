@@ -1,22 +1,6 @@
 import styles from './Footer.module.css'
 import logo from '../../assets/logo-alura-geek.svg'
-import { TextField, ThemeProvider, createTheme } from '@mui/material'
-
-const Theme = createTheme({
-  palette: {
-    background: {
-      default: "#ffffff"
-    },
-    overrides: {
-      MuiTextField: {
-        root: {
-          backgroundColor: "#ffffff"
-        }
-      }
-    }
-    
-  }
-})
+import { Button, TextField } from '@mui/material'
 
 export function Footer() {
   const links = [
@@ -30,7 +14,7 @@ export function Footer() {
 
   return (
     <footer className={styles.container}>
-      <section className={styles.section_form}>
+      <section>
         <img 
           src={logo} 
           alt="Logo Alura Geek"
@@ -41,26 +25,38 @@ export function Footer() {
           {links.map(link => <p>{link}</p>)}
         </div>
 
-        <ThemeProvider theme={Theme}>
-          <form className={styles.form}>
-            <h3>Fale conosco</h3>
+        <form className={styles.form}>
+          <h3>Fale conosco</h3>
 
-            <TextField 
-              id='filled-basic'
-              label='Nome'
-              backgroundColor='#ffffff'
-            />
+          <TextField 
+            id='filled-basic'
+            label='Nome'
+            variant='filled'
+            sx={{
+              width: 560,
+            }}
+          />
 
-            <TextField 
-              id='outlined-basic'
-              label='Escreva uma mensagem'
-              multiline
-              rows={3}
-            />
+          <TextField 
+            id='filled-basic'
+            label='Escreva uma mensagem'
+            variant='filled'
+            multiline
+            rows={3}
+          />
 
-            <button>Enviar mensagem</button>
-          </form>
-        </ThemeProvider>
+          <Button 
+            variant='contained'
+            sx={{
+              height: '52px',
+              width: '184px',
+              borderRadius: '0',
+              fontFamily: 'Raleway, sans-serif'
+            }}
+          >
+            Enviar mensagem
+          </Button>
+        </form>
       </section>
       <section>
         <p>Desenvolvido por Gustavo Paulino</p>

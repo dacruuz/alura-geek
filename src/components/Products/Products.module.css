@@ -1,0 +1,47 @@
+.container {
+  padding: 60px 152px;
+}
+
+.container div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.container div h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.container .produtos {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.container .produtos .produto_infor {
+  width: 176px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.container .produtos .produto_infor img {
+  height: 176px;
+  width: 176px;
+}
+
+.container .produtos .produto_infor span:nth-child(3) {
+  font-weight: 700;
+}
+
+.container .link {
+  color: var(--color-blue);
+  font-weight: 700;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}

@@ -1,14 +1,17 @@
 import styles from './Menu.module.css'
 import logo from '../../assets/logo-alura-geek.svg'
+import { Link } from 'react-router-dom'
 
 export function Menu() {
   return (
     <header className={styles.container}>
-      <img 
-        src={logo} 
-        alt="Logo Alura Geek" 
-        className={styles.logo}
-      />
+      <Link to='/'>
+        <img 
+          src={logo} 
+          alt="Logo Alura Geek" 
+          className={styles.logo}
+        />
+      </Link>
 
       <input 
         type="text"
@@ -16,7 +19,11 @@ export function Menu() {
         className={styles.input}
       />
 
-      <button className={styles.button}>Login</button>
+      <Link to='/login'>
+        <button className={styles.button}>
+          Login
+        </button>
+      </Link>
     </header>
   )
 }
